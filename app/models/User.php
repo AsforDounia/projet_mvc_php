@@ -3,23 +3,23 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Capsule\Manager as DB;
 
-class User extends Model
-{
+class User extends Model {
     protected $table = 'users';
     protected $fillable = ['username', 'password', 'role'];
-    public $timestamps = false;
+    public $timestamps = true;
 
-    public function __construct($username = null, $password = null)
+    public function __construct(array $attributes = [])
     {
-        parent::__construct();
-        
-        if ($username !== null && $password !== null) {
-            $this->username = $username;
-            $this->password = $password;
-            $this->role = self::count() === 0 ? 'admin' : 'user';
-        }
+        // if (!isset($attributes['role'])) {
+        //     $count = DB::table('users')->count();
+        //     $attributes['role'] = ($count === 0) ? 'admin' : 'user';
+        // }
+        parent::__construct($attributes);
     }
 }
+
+
 
 ?>

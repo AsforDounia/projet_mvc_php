@@ -1,22 +1,27 @@
 <?php
 
-use Illuminate\Database\Capsule\Manager as Capsule;
+// namespace App\Core;
 
-$capsule = new Capsule;
+// use Illuminate\Database\Capsule\Manager as Capsule;
 
-$capsule->addConnection([
-    'driver' => 'mysql',
-    'host' => 'localhost',
-    'database' => 'projet-mvc-php',
-    'username' => 'root',
-    'password' => '',
-    'charset' => 'utf8',
-    'collation' => 'utf8_unicode_ci',
-    'prefix' => '',
-]);
+// class Database
+// {
+//     public static function init()
+//     {
+//         $capsule = new Capsule;
 
-// Make this Capsule instance available globally
-$capsule->setAsGlobal();
+//         $capsule->addConnection([
+//             'driver'    => $_ENV['DB_DRIVER'] ?? 'mysql',
+//             'host'      => $_ENV['DB_HOST'],
+//             'database'  => $_ENV['DB_NAME'],
+//             'username'  => $_ENV['DB_USER'],
+//             'password'  => $_ENV['DB_PASSWORD'],
+//             'charset'   => 'utf8',
+//             'collation' => 'utf8_unicode_ci',
+//             'prefix'    => '',
+//         ]);
 
-// Setup the Eloquent ORM
-$capsule->bootEloquent(); 
+//         $capsule->setAsGlobal();
+//         $capsule->bootEloquent();
+//     }
+// }
